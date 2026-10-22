@@ -366,13 +366,7 @@ This process helps distinguish improvements in retrieval quality from changes in
 - Validate behavior across different local models and hardware configurations.
 - Add further automated regression checks as new failure cases are discovered.
 
-## Resume Positioning
 
-**Adaptive RAG Engine — AI Engineering / RAG Systems**
-
-Engineered a local-first adaptive RAG pipeline combining semantic search, BM25, hybrid retrieval, query rewriting, and cross-encoder reranking. Built a FastAPI and Next.js application with grounded generation, citation validation, insufficient-evidence handling, and a 50-query evaluation framework; measured Recall@5 of 0.93 and improved MRR from 0.892 to 0.930 over the baseline.
-
-Use these metrics only while the referenced benchmark results remain representative of the published implementation.
 
 ## License
 
