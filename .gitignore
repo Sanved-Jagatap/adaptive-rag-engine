@@ -1,0 +1,94 @@
+# =========================
+# Python
+# =========================
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# =========================
+# Environment and secrets
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Application data
+# =========================
+data/raw/*
+!data/raw/.gitkeep
+
+data/processed/*
+!data/processed/.gitkeep
+
+# Preserve evaluation corpus
+!data/eval_corpus/
+!data/eval_corpus/**
+
+# =========================
+# Experiment outputs
+# =========================
+experiments/routing_log.jsonl
+experiments/*.log
+
+# Preserve benchmark dataset
+!experiments/eval_dataset_v2.jsonl
+
+# =========================
+# Frontend
+# =========================
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.vercel/
+frontend/coverage/
+
+# =========================
+# Logs and temporary files
+# =========================
+*.log
+logs/
+*.tmp
+*.temp
+*.bak
+
+# =========================
+# IDE
+# =========================
+.vscode/
+.idea/
+*.iml
+
+# =========================
+# Operating system
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# Docker local overrides
+# =========================
+docker-compose.override.yml
+
+# Generated evaluation outputs and backups
+experiments/eval_routing_log.jsonl
+experiments/generation_diagnostics_v2.jsonl
+experiments/latest_results_backup.json
+
+# Local raw-data backups
+data/raw_backup/
+
+# Older evaluation snapshots; retain latest_results.json as the published result
+experiments/eval_dataset_v1.jsonl
+experiments/results_v2.json
+experiments/retrieval_v2.json

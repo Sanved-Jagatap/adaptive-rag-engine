@@ -1,0 +1,36 @@
+# --- Web framework ---
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+pydantic==2.9.2
+pydantic-settings==2.5.2
+
+# --- HTTP client (Ollama, Qdrant REST fallback) ---
+httpx==0.27.2
+
+# --- Document ingestion (Phase 1: basic loader + chunker) ---
+pymupdf==1.24.10
+# Note: no tokenizer library pinned here on purpose — the chunker uses a
+# whitespace-based approximation instead of tiktoken. See
+# app/ingestion/chunker.py docstring for why.
+
+# --- Vector / lexical (Phase 2/3) ---
+qdrant-client==1.11.1
+rank-bm25==0.2.2
+sentence-transformers==3.1.1
+# Note: sentence-transformers depends on torch. In Docker, install the
+# CPU-only torch wheel BEFORE this file (see docker/Dockerfile) — otherwise
+# pip resolves the default GPU/CUDA build, pulling in several GB of NVIDIA
+# packages this project (CPU-only embedding/reranking, local Ollama) never
+# uses. For local (non-Docker) dev, run the same command manually first:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+
+# --- Relational storage ---
+sqlalchemy==2.0.35
+psycopg2-binary==2.9.9
+
+# --- Testing ---
+pytest==8.3.3
+pytest-asyncio==0.24.0
+
+# --- Dev quality of life ---
+python-dotenv==1.0.1
